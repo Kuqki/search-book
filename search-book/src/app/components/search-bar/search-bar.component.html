@@ -1,4 +1,4 @@
-<mat-form-field appearance="fill">
+<mat-form-field appearance="fill" [formGroup]="form">
     <mat-label>Search Book</mat-label>
-    <input matInput placeholder="Search Book" [(ngModel)]="bookname" #inputBook>
+    <input matInput placeholder="Search Book" [(ngModel)]="bookname" #inputBook formControlName="bookinput" />
 </mat-form-field>
