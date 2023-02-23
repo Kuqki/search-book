@@ -1,9 +1,10 @@
 export interface Book {
-    id?: number;
+    id: string;
     picture: string;
     name: string;
+    author: string[];
     publisher: string;
     date: string;
     description: string;
-    onwishlist: boolean;
+    onWishlist: boolean;
 }

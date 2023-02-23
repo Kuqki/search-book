@@ -1,3 +1,4 @@
-<app-card>
-    
-</app-card>
+<div class="booklist">
+    <app-card *ngFor="let book of books" [book]='book' (OnAddList) = "addList(book)">
+    </app-card>
+</div>

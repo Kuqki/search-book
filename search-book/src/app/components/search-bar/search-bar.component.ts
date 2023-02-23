@@ -28,9 +28,7 @@ export class SearchBarComponent implements OnInit {
           return this.bookService.getBooks(this.bookname);
         })
       )
-      .subscribe((response: any) => {
-        console.log(response.items);
-      });
+      .subscribe();
   }
   ngOnDestroy(): void {
     this.subsq.unsubscribe();

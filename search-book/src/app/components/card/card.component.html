@@ -1,14 +1,16 @@
-<mat-card>
-    <img mat-card-lg-image
-        src="http://books.google.com/books/content?id=sLfHGZzEy9cC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api">
+<mat-card [ngClass]="{ onlist: book.onWishlist }" (click)="OnAdd(book)">
+    <img mat-card-lg-image src="{{book.picture}}">
     <div class="text">
         <mat-card-header>
             <mat-card-title>
-                Testing title
+                {{book.name}}
             </mat-card-title>
         </mat-card-header>
         <mat-card-content>
-            <p>Testing content</p>
+            <p> <b>Author:</b> {{book.author}}</p>
+            <p> <b>Publisher:</b> {{book.publisher}}</p>
+            <p><b>Published Date:</b> {{book.date}}</p>
+            <p><b>Description:</b> {{book.description}}</p>
         </mat-card-content>
     </div>
 </mat-card>

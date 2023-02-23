@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { BookService } from 'src/app/services/book.service';
+import { Book } from 'src/app/Book';
 
 @Component({
   selector: 'app-booklist',
@@ -7,7 +8,20 @@ import { BookService } from 'src/app/services/book.service';
   styleUrls: ['./booklist.component.css']
 })
 export class BooklistComponent {
-  constructor(private bookService: BookService) {
-    
+  books: Book[] = []
+  constructor(private bookService: BookService) { }
+
+  ngOnInit(): void {
+    this.bookService.booklist$.subscribe((data: any) => {
+      this.books = data;
+    });
+  }
+
+  addList(book: Book) {
+    // console.log(book);
+    if (!book.onWishlist) {
+      book.onWishlist = true;
+      this.bookService.addWishList(book);
+    }
   }
 }

@@ -1,6 +1,6 @@
 <div class="container">
     <p>
-        My Reading Wishlish ()
+        My Reading Wish List:
     </p>
-    <app-wishlist-item></app-wishlist-item>
+    <app-wishlist-item *ngFor="let book of wishlist" [book]='book' (onDeleteBook)="deleteBook(book)"></app-wishlist-item>
 </div>
